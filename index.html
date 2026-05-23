@@ -1,102 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Morgan — Data Analyst</title>
+  <title>Eyuel Alemnew — Laravel/React Developer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], serif: ['Syne', 'sans-serif'] },
           colors: {
-            stone: { 50:'#fafaf9', 100:'#f5f5f4', 200:'#e7e5e4', 300:'#d6d3d1', 400:'#a8a29e', 500:'#78716c', 600:'#57534e', 700:'#44403c', 800:'#292524', 900:'#1c1917' },
-            accent: { 50:'#fffbeb', 100:'#fef3c7', 200:'#fde68a', 400:'#fbbf24', 500:'#f59e0b', 600:'#d97706', 700:'#b45309' }
+            stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 300: '#d6d3d1', 400: '#a8a29e', 500: '#78716c', 600: '#57534e', 700: '#44403c', 800: '#292524', 900: '#1c1917' },
+            accent: { 50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' },
           }
         }
       }
     }
   </script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #1c1917; color: #fafaf9; overflow-x: hidden; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #1c1917; }
-    ::-webkit-scrollbar-thumb { background: #44403c; border-radius: 3px; }
+    html {
+      scroll-behavior: smooth
+    }
 
-    /* Animations */
-    @keyframes fadeIn { 0%{opacity:0} 100%{opacity:1} }
-    @keyframes slideUp { 0%{opacity:0;transform:translateY(30px)} 100%{opacity:1;transform:translateY(0)} }
-    @keyframes slideLeft { 0%{opacity:0;transform:translateX(40px)} 100%{opacity:1;transform:translateX(0)} }
-    @keyframes slideRight { 0%{opacity:0;transform:translateX(-40px)} 100%{opacity:1;transform:translateX(0)} }
-    @keyframes countUp { 0%{opacity:0;transform:translateY(10px)} 100%{opacity:1;transform:translateY(0)} }
-    @keyframes pulse-glow { 0%,100%{box-shadow:0 0 20px rgba(245,158,11,0.15)} 50%{box-shadow:0 0 40px rgba(245,158,11,0.3)} }
-    @keyframes draw-line { 0%{stroke-dashoffset:1000} 100%{stroke-dashoffset:0} }
-    @keyframes bar-grow { 0%{transform:scaleY(0)} 100%{transform:scaleY(1)} }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    @keyframes grid-pulse { 0%,100%{opacity:0.03} 50%{opacity:0.08} }
-    @keyframes data-flow { 0%{transform:translateY(-100%);opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{transform:translateY(100vh);opacity:0} }
-    @keyframes rotate-slow { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-    @keyframes dash { to { stroke-dashoffset: 0; } }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #1c1917;
+      color: #fafaf9;
+      overflow-x: hidden
+    }
 
-    .animate-fade { animation: fadeIn 1s ease-out forwards; }
-    .animate-slide-up { animation: slideUp 0.8s ease-out forwards; }
-    .animate-slide-left { animation: slideLeft 0.8s ease-out forwards; }
-    .animate-slide-right { animation: slideRight 0.8s ease-out forwards; }
-    .animate-float { animation: float 4s ease-in-out infinite; }
+    ::-webkit-scrollbar {
+      width: 5px
+    }
 
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.5,0,0,1), transform 0.8s cubic-bezier(0.5,0,0,1); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    .delay-100 { transition-delay: 0.1s; }
-    .delay-200 { transition-delay: 0.2s; }
-    .delay-300 { transition-delay: 0.3s; }
-    .delay-400 { transition-delay: 0.4s; }
-    .delay-500 { transition-delay: 0.5s; }
+    ::-webkit-scrollbar-track {
+      background: #1c1917
+    }
 
-    /* Hero Grid Background */
+    ::-webkit-scrollbar-thumb {
+      background: #44403c;
+      border-radius: 3px
+    }
+
+    ::selection {
+      background: rgba(245, 158, 11, 0.3);
+      color: #fafaf9
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes slideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(40px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    @keyframes bar-grow {
+      from {
+        transform: scaleY(0)
+      }
+
+      to {
+        transform: scaleY(1)
+      }
+    }
+
+    @keyframes data-flow {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0
+      }
+
+      10% {
+        opacity: 1
+      }
+
+      90% {
+        opacity: 1
+      }
+
+      100% {
+        transform: translateY(100vh);
+        opacity: 0
+      }
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.15)
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(245, 158, 11, 0.3)
+      }
+    }
+
+    @keyframes slideMedia {
+      from {
+        opacity: 0;
+        transform: translateX(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    .animate-fade {
+      animation: fadeIn 1s ease-out forwards
+    }
+
+    .animate-slide-up {
+      animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0
+    }
+
+    .animate-slide-left {
+      animation: slideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.5, 0, 0, 1), transform 0.7s cubic-bezier(0.5, 0, 0, 1)
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .delay-100 {
+      transition-delay: .1s
+    }
+
+    .delay-200 {
+      transition-delay: .2s
+    }
+
+    .delay-300 {
+      transition-delay: .3s
+    }
+
+    .delay-400 {
+      transition-delay: .4s
+    }
+
+    .delay-500 {
+      transition-delay: .5s
+    }
+
     .hero-grid {
-      background-image:
-        linear-gradient(rgba(245,158,11,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,158,11,0.05) 1px, transparent 1px);
-      background-size: 60px 60px;
+      background-image: linear-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
+      background-size: 52px 52px
     }
 
-    /* Data flow lines */
-    .data-line {
-      position: absolute;
-      width: 1px;
-      height: 100px;
-      background: linear-gradient(to bottom, transparent, rgba(245,158,11,0.4), transparent);
-      animation: data-flow 4s linear infinite;
+    .dot-grid {
+      background-image: radial-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 1px);
+      background-size: 20px 20px
     }
 
-    /* Chart bars animation */
-    .chart-bar {
-      transform-origin: bottom;
-      animation: bar-grow 1.2s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    .nav-link {
+      position: relative
     }
 
-    /* Skill ring */
-    .skill-ring { transition: stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1); }
-
-    /* Card hover */
-    .project-card {
-      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(245,158,11,0.1);
-    }
-
-    /* Nav link underline */
-    .nav-link { position: relative; }
     .nav-link::after {
       content: '';
       position: absolute;
@@ -105,300 +229,502 @@
       width: 0;
       height: 1px;
       background: #f59e0b;
-      transition: width 0.3s ease;
+      transition: width .3s ease
     }
-    .nav-link:hover::after { width: 100%; }
 
-    /* Stat counter */
+    .nav-link:hover::after {
+      width: 100%
+    }
+
     .stat-value {
       background: linear-gradient(135deg, #f59e0b, #fde68a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background-clip: text
     }
 
-    /* Timeline */
-    .timeline-line {
-      background: linear-gradient(to bottom, transparent, #44403c, #44403c, transparent);
+    .data-line {
+      position: absolute;
+      width: 1px;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, rgba(245, 158, 11, 0.4), transparent);
+      animation: data-flow 5s linear infinite
     }
 
-    /* Tooltip style tag */
+    .project-card {
+      transition: transform .4s cubic-bezier(.25, .46, .45, .94), box-shadow .4s ease
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .4), 0 0 30px rgba(245, 158, 11, .1)
+    }
+
+    .skill-bar {
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1)
+    }
+
+    .chart-bar {
+      transform-origin: bottom;
+      animation: bar-grow 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards
+    }
+
     .tag {
-      background: rgba(245,158,11,0.1);
-      border: 1px solid rgba(245,158,11,0.2);
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.2);
       color: #fbbf24;
       font-size: 11px;
       padding: 3px 10px;
       border-radius: 4px;
       font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      letter-spacing: .05em;
+      text-transform: uppercase
     }
 
-    /* Decorative dot grid */
-    .dot-grid {
-      background-image: radial-gradient(rgba(245,158,11,0.15) 1px, transparent 1px);
-      background-size: 20px 20px;
+    .timeline-line {
+      background: linear-gradient(to bottom, transparent, #44403c, #44403c, transparent)
     }
 
-    /* Smooth section transitions */
-    section { position: relative; }
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease
+    }
 
-    /* Custom selection */
-    ::selection { background: rgba(245,158,11,0.3); color: #fafaf9; }
+    #mobile-menu.open {
+      max-height: 400px
+    }
 
-    /* Mobile menu */
-    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    #mobile-menu.open { max-height: 400px; }
-
-    /* Mini sparkline */
-    .sparkline { filter: drop-shadow(0 0 4px rgba(245,158,11,0.3)); }
-
-    /* Toast */
     .toast {
-      position: fixed; bottom: 30px; right: 30px; padding: 16px 24px;
-      background: #292524; border: 1px solid #44403c; border-radius: 12px;
-      color: #fafaf9; font-size: 14px; z-index: 1000;
-      transform: translateY(100px); opacity: 0;
-      transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 16px 24px;
+      background: #292524;
+      border: 1px solid #44403c;
+      border-radius: 12px;
+      color: #fafaf9;
+      font-size: 14px;
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all .4s cubic-bezier(.16, 1, .3, 1)
     }
-    .toast.show { transform: translateY(0); opacity: 1; }
 
-    /* Cursor dot (decorative) */
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1
+    }
+
+    .glow-border {
+      border: 1px solid rgba(245, 158, 11, 0.15);
+      transition: border-color .3s
+    }
+
+    .glow-border:hover {
+      border-color: rgba(245, 158, 11, 0.35)
+    }
+
     .cursor-dot {
-      width: 8px; height: 8px; background: #f59e0b;
-      border-radius: 50%; position: fixed; pointer-events: none;
-      z-index: 9999; transition: transform 0.15s ease;
-      mix-blend-mode: difference;
+      width: 8px;
+      height: 8px;
+      background: #f59e0b;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform .15s ease;
+      mix-blend-mode: difference
+    }
+
+    /* ─── MEDIA SLIDER ─── */
+    .media-slider {
+      position: relative;
+      overflow: hidden;
+      background: #0d0d0c
+    }
+
+    .media-track {
+      display: flex;
+      transition: transform .5s cubic-bezier(0.4, 0, 0.2, 1)
+    }
+
+    .media-slide {
+      flex: 0 0 100%;
+      position: relative
+    }
+
+    .media-slide img,
+    .media-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #0d0d0c
+    }
+
+    .media-slide img {
+      cursor: zoom-in
+    }
+
+    /* slide-in animation when changing */
+    .media-track.animating .media-slide:last-child {
+      animation: slideMedia .4s ease forwards
+    }
+
+    /* nav arrows */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(28, 25, 23, 0.8);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, opacity .2s;
+      opacity: 0
+    }
+
+    .media-slider:hover .slider-btn {
+      opacity: 1
+    }
+
+    .slider-btn:hover {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.6)
+    }
+
+    .slider-btn.prev {
+      left: 10px
+    }
+
+    .slider-btn.next {
+      right: 10px
+    }
+
+    .slider-btn:disabled {
+      opacity: 0.2 !important;
+      cursor: default
+    }
+
+    /* dots */
+    .slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 20
+    }
+
+    .slider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: background .2s, width .2s;
+      border: none
+    }
+
+    .slider-dot.active {
+      background: #f59e0b;
+      width: 18px;
+      border-radius: 4px
+    }
+
+    /* media type badge */
+    .media-type-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 15;
+      background: rgba(28, 25, 23, 0.85);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 10px;
+      color: #fbbf24;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    /* video play overlay */
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      pointer-events: none
+    }
+
+    .play-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .2s
+    }
+
+    .media-slide:has(video:not([paused])) .play-icon {
+      opacity: 0
+    }
+
+    /* counter */
+    .slide-counter {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 15;
+      background: rgba(28, 25, 23, 0.8);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 10px;
+      color: #a8a29e;
+      font-weight: 500
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Custom Cursor -->
   <div class="cursor-dot hidden lg:block" id="cursorDot"></div>
-
-  <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <!-- Navigation -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="background:rgba(28,25,23,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(68,64,60,0.3)">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+    style="background:rgba(28,25,23,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(68,64,60,0.3)">
+    <div class="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-lg bg-accent-500 flex items-center justify-center font-serif font-bold text-stone-900 text-lg group-hover:scale-110 transition-transform">A</div>
-        <span class="text-stone-100 font-medium tracking-tight text-lg">Alex Morgan</span>
+        <div
+          class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center font-serif font-bold text-white text-base group-hover:scale-110 transition-transform">
+          E</div>
+        <span class="text-slate-100 font-semibold tracking-tight font-serif">Eyuel Alemnew</span>
       </a>
       <div class="hidden md:flex items-center gap-10">
-        <a href="#about" class="nav-link text-sm text-stone-400 hover:text-stone-100 transition-colors tracking-wide">About</a>
-        <a href="#skills" class="nav-link text-sm text-stone-400 hover:text-stone-100 transition-colors tracking-wide">Skills</a>
-        <a href="#projects" class="nav-link text-sm text-stone-400 hover:text-stone-100 transition-colors tracking-wide">Projects</a>
-        <a href="#experience" class="nav-link text-sm text-stone-400 hover:text-stone-100 transition-colors tracking-wide">Experience</a>
-        <a href="#contact" class="px-5 py-2.5 bg-accent-500 text-stone-900 text-sm font-semibold rounded-lg hover:bg-accent-400 hover:-translate-y-0.5 transition-all duration-300">Get in Touch</a>
+        <a href="#about" class="nav-link text-sm text-slate-400 hover:text-slate-100 transition-colors">About</a>
+        <a href="#skills" class="nav-link text-sm text-slate-400 hover:text-slate-100 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link text-sm text-slate-400 hover:text-slate-100 transition-colors">Projects</a>
+        <a href="#experience"
+          class="nav-link text-sm text-slate-400 hover:text-slate-100 transition-colors">Experience</a>
+        <a href="#contact"
+          class="px-5 py-2.5 bg-accent-500 text-stone-900 text-sm font-semibold rounded-lg hover:bg-accent-400 hover:-translate-y-0.5 transition-all duration-300">Get
+          in Touch</a>
       </div>
-      <button id="menuBtn" class="md:hidden text-stone-300 hover:text-stone-100 transition-colors">
+      <button id="menuBtn" class="md:hidden text-slate-300 hover:text-slate-100 transition-colors">
         <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
       </button>
     </div>
-    <div id="mobile-menu" class="md:hidden px-6 pb-6 space-y-4">
-      <a href="#about" class="block text-stone-400 hover:text-stone-100 transition-colors py-2">About</a>
-      <a href="#skills" class="block text-stone-400 hover:text-stone-100 transition-colors py-2">Skills</a>
-      <a href="#projects" class="block text-stone-400 hover:text-stone-100 transition-colors py-2">Projects</a>
-      <a href="#experience" class="block text-stone-400 hover:text-stone-100 transition-colors py-2">Experience</a>
-      <a href="#contact" class="block px-5 py-2.5 bg-accent-500 text-stone-900 text-sm font-semibold rounded-lg text-center">Get in Touch</a>
+    <div id="mobile-menu" class="md:hidden px-6 pb-6 space-y-4" style="background:rgba(28,25,23,0.97)">
+      <a href="#about" class="block text-slate-400 hover:text-slate-100 transition-colors py-2">About</a>
+      <a href="#skills" class="block text-slate-400 hover:text-slate-100 transition-colors py-2">Skills</a>
+      <a href="#projects" class="block text-slate-400 hover:text-slate-100 transition-colors py-2">Projects</a>
+      <a href="#experience" class="block text-slate-400 hover:text-slate-100 transition-colors py-2">Experience</a>
+      <a href="#contact"
+        class="block px-5 py-2.5 bg-accent-500 text-stone-900 text-sm font-semibold rounded-lg text-center">Get in
+        Touch</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section id="hero" class="min-h-screen flex items-center relative overflow-hidden hero-grid">
-    <!-- Decorative data flow lines -->
-    <div class="data-line" style="left:10%;animation-delay:0s"></div>
-    <div class="data-line" style="left:25%;animation-delay:1.5s;height:80px"></div>
-    <div class="data-line" style="left:50%;animation-delay:0.8s;height:120px"></div>
-    <div class="data-line" style="left:75%;animation-delay:2s;height:60px"></div>
-    <div class="data-line" style="left:90%;animation-delay:0.5s;height:90px"></div>
-
-    <!-- Background decorative chart -->
-    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[600px] opacity-[0.06] hidden lg:block">
-      <svg viewBox="0 0 500 300" class="w-full h-full">
-        <polyline points="0,280 50,250 100,200 150,220 200,150 250,170 300,100 350,120 400,60 450,80 500,30" fill="none" stroke="#f59e0b" stroke-width="2" style="stroke-dasharray:1000;animation:dash 3s linear forwards"/>
-        <polyline points="0,280 50,260 100,240 150,250 200,210 250,220 300,180 350,190 400,160 450,170 500,140" fill="none" stroke="#78716c" stroke-width="1.5" style="stroke-dasharray:1000;animation:dash 4s linear forwards"/>
-      </svg>
-    </div>
+    <div class="data-line" style="left:8%;animation-delay:0s"></div>
+    <div class="data-line" style="left:22%;animation-delay:1.5s;height:80px"></div>
+    <div class="data-line" style="left:48%;animation-delay:0.8s;height:120px"></div>
+    <div class="data-line" style="left:72%;animation-delay:2.1s;height:60px"></div>
+    <div class="data-line" style="left:91%;animation-delay:0.4s;height:90px"></div>
+    <div class="absolute -right-40 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-[0.04]"
+      style="background:radial-gradient(circle,#f59e0b 0%,transparent 70%)"></div>
 
     <div class="max-w-7xl mx-auto px-6 pt-20 w-full">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <div class="animate-fade" style="animation-delay:0.2s">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-700 bg-stone-800/50 mb-8">
-              <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span class="text-xs text-stone-400 tracking-wider uppercase font-medium">Available for opportunities</span>
+          <div class="animate-fade" style="animation-delay:.2s">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-stone-600 bg-stone-800/60 mb-8">
+              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              <span class="text-xs text-slate-400 tracking-wider uppercase font-medium">Open to opportunities</span>
             </div>
           </div>
-          <h1 class="animate-slide-up font-serif text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6" style="animation-delay:0.3s">
-            Turning <span class="text-accent-500">Data</span><br>Into Insight
+          <h1 class="animate-slide-up font-serif text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6"
+            style="animation-delay:.3s">
+            Building<br><span class="text-accent-400">Full-Stack</span><br>Web Apps
           </h1>
-          <p class="animate-slide-up text-stone-400 text-lg md:text-xl leading-relaxed max-w-lg mb-10" style="animation-delay:0.5s">
-            Senior Data Analyst with 6+ years transforming complex datasets into strategic decisions. Specializing in predictive analytics, visualization, and business intelligence.
+          <p class="animate-slide-up text-slate-400 text-lg leading-relaxed max-w-lg mb-10" style="animation-delay:.5s">
+            Laravel &amp; React Developer based in Addis Ababa, crafting enterprise-grade systems, KPI dashboards, and
+            business intelligence solutions that are deployed in production.
           </p>
-          <div class="animate-slide-up flex flex-wrap gap-4" style="animation-delay:0.7s">
-            <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 bg-accent-500 text-stone-900 font-semibold rounded-xl hover:bg-accent-400 hover:-translate-y-0.5 transition-all duration-300" style="box-shadow:0 10px 30px rgba(245,158,11,0.2)">
-              View My Work
-              <span class="iconify" data-icon="lucide:arrow-right" data-width="18"></span>
+          <div class="animate-slide-up flex flex-wrap gap-4" style="animation-delay:.7s">
+            <a href="#projects"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-accent-500 text-stone-900 font-semibold rounded-xl hover:bg-accent-400 hover:-translate-y-0.5 transition-all duration-300"
+              style="box-shadow:0 10px 30px rgba(245,158,11,0.15)">
+              View My Work <span class="iconify" data-icon="lucide:arrow-right" data-width="18"></span>
             </a>
-            <a href="#about" class="inline-flex items-center gap-2 px-8 py-4 border border-stone-700 text-stone-300 font-medium rounded-xl hover:border-stone-500 hover:text-stone-100 hover:-translate-y-0.5 transition-all duration-300">
-              About Me
-            </a>
+            <a href="#about"
+              class="inline-flex items-center gap-2 px-8 py-4 border border-stone-500 text-slate-300 font-medium rounded-xl hover:border-accent-500/60 hover:text-slate-100 hover:-translate-y-0.5 transition-all duration-300">About
+              Me</a>
           </div>
-
-          <!-- Mini Stats -->
-          <div class="animate-slide-up mt-14 flex gap-10" style="animation-delay:0.9s">
+          <div class="animate-slide-up mt-14 flex gap-10" style="animation-delay:.9s">
             <div>
-              <div class="stat-value text-3xl font-bold font-serif" data-count="50">0</div>
-              <div class="text-stone-500 text-sm mt-1">Projects Delivered</div>
+              <div class="stat-value text-3xl font-bold font-serif">5+</div>
+              <div class="text-slate-500 text-sm mt-1">Projects in Production</div>
             </div>
-            <div class="w-px bg-stone-700"></div>
+            <div class="w-px bg-stone-600"></div>
             <div>
-              <div class="stat-value text-3xl font-bold font-serif" data-count="6">0</div>
-              <div class="text-stone-500 text-sm mt-1">Years Experience</div>
+              <div class="stat-value text-3xl font-bold font-serif">2+</div>
+              <div class="text-slate-500 text-sm mt-1">Year Experience</div>
             </div>
-            <div class="w-px bg-stone-700"></div>
-            <div>
-              <div class="stat-value text-3xl font-bold font-serif" data-count="12">0</div>
-              <div class="text-stone-500 text-sm mt-1">Industry Sectors</div>
-            </div>
+            <div class="w-px bg-stone-600"></div>
           </div>
         </div>
 
-        <!-- Hero Visual — Animated Chart Card -->
-        <div class="hidden lg:block animate-slide-left" style="animation-delay:0.6s">
+        <!-- Hero code card -->
+        <div class="hidden lg:block animate-slide-left" style="animation-delay:.6s">
           <div class="relative">
-            <!-- Main chart card -->
-            <div class="bg-stone-800/60 border border-stone-700/50 rounded-2xl p-8 backdrop-blur-sm" style="animation:pulse-glow 4s ease-in-out infinite">
-              <div class="flex items-center justify-between mb-6">
-                <div>
-                  <div class="text-stone-500 text-xs uppercase tracking-wider font-medium">Revenue Impact</div>
-                  <div class="text-stone-100 text-2xl font-bold mt-1">$2.4M</div>
-                </div>
-                <div class="flex items-center gap-1 text-green-400 text-sm font-medium">
-                  <span class="iconify" data-icon="lucide:trending-up" data-width="16"></span>
-                  +34.2%
-                </div>
+            <div class="bg-stone-800/70 border border-stone-600/60 rounded-2xl p-6 backdrop-blur-sm font-mono text-sm"
+              style="animation:pulse-glow 4s ease-in-out infinite">
+              <div class="flex items-center gap-2 mb-5">
+                <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
+                <span class="ml-3 text-slate-500 text-xs">OrderController.php</span>
               </div>
-              <!-- SVG Chart -->
-              <svg viewBox="0 0 400 150" class="w-full sparkline">
-                <defs>
-                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/>
-                    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,130 Q30,125 60,110 T120,90 T180,70 T240,50 T300,35 T360,25 L400,20 L400,150 L0,150 Z" fill="url(#chartGrad)"/>
-                <polyline points="0,130 60,110 120,90 180,70 240,50 300,35 360,25 400,20" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:600;animation:dash 2.5s ease forwards"/>
-                <!-- Data points -->
-                <circle cx="0" cy="130" r="3" fill="#f59e0b" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.5s" dur="0.3s" fill="freeze"/></circle>
-                <circle cx="120" cy="90" r="3" fill="#f59e0b" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2s" dur="0.3s" fill="freeze"/></circle>
-                <circle cx="240" cy="50" r="3" fill="#f59e0b" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.3s" fill="freeze"/></circle>
-                <circle cx="400" cy="20" r="4" fill="#f59e0b" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3s" dur="0.3s" fill="freeze"/></circle>
-              </svg>
-              <!-- Mini bar chart below -->
-              <div class="flex items-end gap-2 mt-6 h-12">
-                <div class="flex-1 bg-accent-500/20 rounded-sm chart-bar" style="height:40%;animation-delay:0.5s"></div>
-                <div class="flex-1 bg-accent-500/30 rounded-sm chart-bar" style="height:55%;animation-delay:0.6s"></div>
-                <div class="flex-1 bg-accent-500/30 rounded-sm chart-bar" style="height:45%;animation-delay:0.7s"></div>
-                <div class="flex-1 bg-accent-500/40 rounded-sm chart-bar" style="height:70%;animation-delay:0.8s"></div>
-                <div class="flex-1 bg-accent-500/40 rounded-sm chart-bar" style="height:60%;animation-delay:0.9s"></div>
-                <div class="flex-1 bg-accent-500/50 rounded-sm chart-bar" style="height:80%;animation-delay:1.0s"></div>
-                <div class="flex-1 bg-accent-500/60 rounded-sm chart-bar" style="height:75%;animation-delay:1.1s"></div>
-                <div class="flex-1 bg-accent-500/70 rounded-sm chart-bar" style="height:95%;animation-delay:1.2s"></div>
-                <div class="flex-1 bg-accent-500/80 rounded-sm chart-bar" style="height:85%;animation-delay:1.3s"></div>
-                <div class="flex-1 bg-accent-500 rounded-sm chart-bar" style="height:100%;animation-delay:1.4s"></div>
+              <div class="space-y-1 text-xs leading-6">
+                <div><span class="text-accent-400">public function</span> <span
+                    class="text-accent-300">store</span><span class="text-slate-300">(Request $request)</span></div>
+                <div class="pl-4"><span class="text-slate-500">{</span></div>
+                <div class="pl-8"><span class="text-accent-400">$order</span> = Order::<span
+                    class="text-accent-300">create</span><span class="text-slate-300">([</span></div>
+                <div class="pl-12"><span class="text-green-400">'customer_id'</span> <span
+                    class="text-slate-400">=&gt;</span> <span class="text-accent-400">$request</span><span
+                    class="text-slate-300">-&gt;customer_id,</span></div>
+                <div class="pl-12"><span class="text-green-400">'branch_id'</span> <span
+                    class="text-slate-400">=&gt;</span> <span class="text-accent-400">$request</span><span
+                    class="text-slate-300">-&gt;branch_id,</span></div>
+                <div class="pl-12"><span class="text-green-400">'status'</span> <span
+                    class="text-slate-400">=&gt;</span> <span class="text-green-400">'pending'</span><span
+                    class="text-slate-300">,</span></div>
+                <div class="pl-8"><span class="text-slate-300">]);</span></div>
+                <div class="pl-8 mt-2"><span class="text-accent-400">$this</span>-&gt;<span
+                    class="text-accent-300">sendSmsReminder</span><span class="text-slate-300">($order);</span></div>
+                <div class="pl-8"><span class="text-accent-400">$this</span>-&gt;<span
+                    class="text-accent-300">exportKpiReport</span><span class="text-slate-300">($order);</span></div>
+                <div class="pl-8 mt-2"><span class="text-accent-400">return</span> response()-&gt;<span
+                    class="text-accent-300">json</span><span class="text-slate-300">(['</span><span
+                    class="text-green-400">ok</span><span class="text-slate-300">' =&gt; true]);</span></div>
+                <div class="pl-4"><span class="text-slate-500">}</span></div>
               </div>
-              <div class="flex justify-between mt-3 text-[10px] text-stone-600 uppercase tracking-wider">
-                <span>Jan</span><span>Mar</span><span>Jun</span><span>Sep</span><span>Dec</span>
+              <div class="mt-6 pt-5 border-t border-stone-600/40">
+                <div class="text-[10px] text-slate-500 uppercase tracking-wider mb-3">Orders this week</div>
+                <div class="flex items-end gap-1.5 h-10">
+                  <div class="flex-1 bg-accent-500/25 rounded-sm chart-bar" style="height:45%;animation-delay:.3s">
+                  </div>
+                  <div class="flex-1 bg-accent-500/35 rounded-sm chart-bar" style="height:60%;animation-delay:.4s">
+                  </div>
+                  <div class="flex-1 bg-accent-500/40 rounded-sm chart-bar" style="height:50%;animation-delay:.5s">
+                  </div>
+                  <div class="flex-1 bg-accent-500/50 rounded-sm chart-bar" style="height:80%;animation-delay:.6s">
+                  </div>
+                  <div class="flex-1 bg-accent-500/60 rounded-sm chart-bar" style="height:65%;animation-delay:.7s">
+                  </div>
+                  <div class="flex-1 bg-accent-500/75 rounded-sm chart-bar" style="height:90%;animation-delay:.8s">
+                  </div>
+                  <div class="flex-1 bg-accent-500 rounded-sm chart-bar" style="height:100%;animation-delay:.9s"></div>
+                </div>
               </div>
             </div>
-
-            <!-- Floating metric cards -->
-            <div class="absolute -top-4 -left-6 bg-stone-800/80 border border-stone-700/60 rounded-xl px-5 py-3 backdrop-blur-sm animate-float" style="animation-delay:0s">
-              <div class="text-[10px] text-stone-500 uppercase tracking-wider">Accuracy</div>
-              <div class="text-accent-400 font-bold text-lg">97.3%</div>
+            <div
+              class="absolute -top-4 -left-6 bg-stone-800/90 border border-stone-700/70 rounded-xl px-5 py-3 backdrop-blur-sm animate-float"
+              style="animation-delay:0s">
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider">Stack</div>
+              <div class="text-accent-400 font-bold text-sm mt-0.5">Laravel + React</div>
             </div>
-            <div class="absolute -bottom-4 -right-4 bg-stone-800/80 border border-stone-700/60 rounded-xl px-5 py-3 backdrop-blur-sm animate-float" style="animation-delay:2s">
-              <div class="text-[10px] text-stone-500 uppercase tracking-wider">Models Built</div>
-              <div class="text-accent-400 font-bold text-lg">128</div>
+            <div
+              class="absolute -bottom-4 -right-4 bg-stone-800/90 border border-stone-700/70 rounded-xl px-5 py-3 backdrop-blur-sm animate-float"
+              style="animation-delay:2s">
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider">PWA Ready</div>
+              <div class="text-green-400 font-bold text-sm mt-0.5">✓ Offline Support</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade" style="animation-delay:1.5s">
-      <span class="text-stone-600 text-xs uppercase tracking-widest">Scroll</span>
-      <div class="w-5 h-8 border border-stone-700 rounded-full flex justify-center pt-1.5">
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade"
+      style="animation-delay:1.5s">
+      <span class="text-slate-600 text-xs uppercase tracking-widest">Scroll</span>
+      <div class="w-5 h-8 border border-stone-500 rounded-full flex justify-center pt-1.5">
         <div class="w-1 h-2 bg-accent-500 rounded-full animate-bounce"></div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ABOUT -->
   <section id="about" class="py-24 md:py-32 relative">
     <div class="absolute inset-0 dot-grid opacity-30"></div>
     <div class="max-w-7xl mx-auto px-6 relative">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Image -->
         <div class="reveal">
-          <div class="relative">
-            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-stone-700/50">
-              <img src="https://picsum.photos/seed/analyst-portrait/600/750" alt="Alex Morgan" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          <div class="relative max-w-[340px] mx-auto lg:ml-auto lg:mr-10">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-stone-600/50 bg-stone-800/50 shadow-2xl">
+              <img id="profilePhoto"
+                src="https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779466434/photo_2026-05-22_19-13-40_lsjl2v.jpg"
+                alt="Eyuel Alemnew" class="w-full h-full object-cover object-top">
             </div>
-            <!-- Experience badge -->
-            <div class="absolute -bottom-6 -right-6 bg-accent-500 rounded-2xl px-6 py-5 shadow-2xl">
-              <div class="text-stone-900 font-bold text-3xl font-serif">6+</div>
-              <div class="text-stone-800 text-sm font-medium">Years of<br>Experience</div>
+            <div
+              class="absolute -bottom-6 -right-6 bg-accent-500 rounded-2xl px-6 py-5 shadow-2xl z-10 md:scale-100 origin-bottom-right">
+              <div class="text-white font-bold text-3xl font-serif">2+</div>
+              <div class="text-blue-100 text-sm font-medium leading-tight mt-1">Year in<br>Production</div>
             </div>
           </div>
         </div>
-
-        <!-- Content -->
         <div>
-          <div class="reveal">
-            <span class="tag">About Me</span>
-          </div>
+          <div class="reveal"><span class="tag">About Me</span></div>
           <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5 mb-6">
-            Bridging the gap between<br><span class="text-accent-500">raw data</span> and <span class="text-accent-500">real impact</span>
+            Full-stack developer who builds<br><span class="text-accent-400">enterprise systems</span> that ship
           </h2>
-          <p class="reveal delay-200 text-stone-400 text-lg leading-relaxed mb-6">
-            I'm a Senior Data Analyst based in San Francisco with a passion for uncovering patterns hidden in data. My approach combines rigorous statistical methodology with clear, compelling storytelling that drives business decisions.
+          <p class="reveal delay-200 text-slate-400 text-lg leading-relaxed mb-5">
+            I'm a Laravel &amp; React Developer based in Addis Ababa, Ethiopia. I specialize in building scalable web
+            applications, KPI dashboards, and business intelligence platforms that are used in real production
+            environments.
           </p>
-          <p class="reveal delay-300 text-stone-500 leading-relaxed mb-8">
-            Over the past six years, I've worked across fintech, e-commerce, healthcare, and SaaS verticals—delivering analytics solutions that have generated over $8M in measurable business value. I believe the best analysis is the one that gets acted upon.
+          <p class="reveal delay-300 text-slate-500 leading-relaxed mb-8">
+            Currently working at Kaldi's Coffee as a Web Developer &amp; Data Analyst, where I've built an enterprise
+            multi-branch management system, a digital menu platform, and multiple internal tools. I hold a Bachelor's in
+            Computer Science from CPU College.
           </p>
-
-          <!-- Quick facts -->
           <div class="reveal delay-400 grid grid-cols-2 gap-4 mb-8">
-            <div class="flex items-center gap-3">
-              <span class="iconify text-accent-500" data-icon="lucide:map-pin" data-width="18"></span>
-              <span class="text-stone-300 text-sm">San Francisco, CA</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="iconify text-accent-500" data-icon="lucide:graduation-cap" data-width="18"></span>
-              <span class="text-stone-300 text-sm">M.S. Statistics, Stanford</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="iconify text-accent-500" data-icon="lucide:briefcase" data-width="18"></span>
-              <span class="text-stone-300 text-sm">Ex-Google, Ex-McKinsey</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="iconify text-accent-500" data-icon="lucide:languages" data-width="18"></span>
-              <span class="text-stone-300 text-sm">English, Python, SQL, R</span>
-            </div>
+            <div class="flex items-center gap-3"><span class="iconify text-accent-400" data-icon="lucide:map-pin"
+                data-width="17"></span><span class="text-slate-300 text-sm">Addis Ababa, Ethiopia</span></div>
+            <div class="flex items-center gap-3"><span class="iconify text-accent-400" data-icon="lucide:graduation-cap"
+                data-width="17"></span><span class="text-slate-300 text-sm">B.Sc. Computer Science</span></div>
+            <div class="flex items-center gap-3"><span class="iconify text-accent-400" data-icon="lucide:briefcase"
+                data-width="17"></span><span class="text-slate-300 text-sm">Kaldi's Coffee</span></div>
+            <div class="flex items-center gap-3"><span class="iconify text-accent-400" data-icon="lucide:phone"
+                data-width="17"></span><span class="text-slate-300 text-sm">+251 973 334 671</span></div>
           </div>
-
           <div class="reveal delay-500">
-            <a href="#contact" class="inline-flex items-center gap-2 text-accent-500 font-medium hover:text-accent-400 transition-colors group">
-              Let's work together
-              <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-right" data-width="18"></span>
+            <a href="#contact"
+              class="inline-flex items-center gap-2 text-accent-400 font-medium hover:text-accent-300 transition-colors group">
+              Let's work together <span class="iconify group-hover:translate-x-1 transition-transform"
+                data-icon="lucide:arrow-right" data-width="17"></span>
             </a>
           </div>
         </div>
@@ -406,386 +732,393 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-24 md:py-32 bg-stone-800/30 relative">
+  <!-- SKILLS -->
+  <section id="skills" class="py-24 md:py-32 relative" style="background:rgba(28,25,23,0.6)">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <span class="tag reveal">Technical Skills</span>
-        <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5">
-          Tools & Technologies
-        </h2>
-        <p class="reveal delay-200 text-stone-500 mt-4 max-w-2xl mx-auto">
-          A comprehensive toolkit refined across hundreds of projects, from data extraction to executive-level presentations.
-        </p>
+        <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5">Tools &amp;
+          Technologies</h2>
+        <p class="reveal delay-200 text-slate-500 mt-4 max-w-2xl mx-auto">A modern full-stack toolkit refined building
+          production enterprise systems.</p>
       </div>
-
-      <!-- Skill Categories -->
-      <div class="grid md:grid-cols-3 gap-8 mb-16">
-        <!-- Programming -->
-        <div class="reveal bg-stone-800/50 border border-stone-700/40 rounded-2xl p-8 hover:border-accent-500/30 transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center mb-5">
-            <span class="iconify text-accent-500" data-icon="lucide:code-2" data-width="24"></span>
-          </div>
-          <h3 class="text-stone-100 font-semibold text-lg mb-4">Programming</h3>
+      <div class="grid md:grid-cols-3 gap-8 mb-14">
+        <div class="reveal bg-stone-800/50 border border-stone-600/40 rounded-2xl p-8 glow-border">
+          <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center mb-5"><span
+              class="iconify text-accent-400" data-icon="lucide:server" data-width="24"></span></div>
+          <h3 class="text-slate-100 font-semibold text-lg mb-5">Backend</h3>
           <div class="space-y-4">
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">Python</span><span class="text-accent-400">Expert</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500 rounded-full skill-bar" data-width="95%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">Laravel 12</span><span
+                  class="text-accent-400">Expert</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500 rounded-full skill-bar" data-width="93%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">SQL</span><span class="text-accent-400">Expert</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500 rounded-full skill-bar" data-width="97%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">PHP</span><span
+                  class="text-accent-400">Expert</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500 rounded-full skill-bar" data-width="90%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">R</span><span class="text-stone-400">Advanced</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500/70 rounded-full skill-bar" data-width="82%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">MySQL / SQL</span><span
+                  class="text-accent-400">Advanced</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500/80 rounded-full skill-bar" data-width="85%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">Scala/Spark</span><span class="text-stone-400">Proficient</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500/60 rounded-full skill-bar" data-width="70%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">REST API Design</span><span
+                  class="text-slate-400">Advanced</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500/70 rounded-full skill-bar" data-width="82%" style="width:0"></div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Visualization -->
-        <div class="reveal delay-100 bg-stone-800/50 border border-stone-700/40 rounded-2xl p-8 hover:border-accent-500/30 transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center mb-5">
-            <span class="iconify text-accent-500" data-icon="lucide:bar-chart-3" data-width="24"></span>
-          </div>
-          <h3 class="text-stone-100 font-semibold text-lg mb-4">Visualization</h3>
+        <div class="reveal delay-100 bg-stone-800/50 border border-stone-600/40 rounded-2xl p-8 glow-border">
+          <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center mb-5"><span
+              class="iconify text-accent-400" data-icon="lucide:layout-dashboard" data-width="24"></span></div>
+          <h3 class="text-slate-100 font-semibold text-lg mb-5">Frontend</h3>
           <div class="space-y-4">
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">Tableau</span><span class="text-accent-400">Expert</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500 rounded-full skill-bar" data-width="96%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">React 19</span><span
+                  class="text-accent-400">Expert</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500 rounded-full skill-bar" data-width="91%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">Power BI</span><span class="text-accent-400">Expert</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500 rounded-full skill-bar" data-width="92%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">TypeScript</span><span
+                  class="text-accent-400">Advanced</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500/80 rounded-full skill-bar" data-width="83%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">D3.js</span><span class="text-stone-400">Advanced</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500/70 rounded-full skill-bar" data-width="78%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">Inertia.js</span><span
+                  class="text-accent-400">Expert</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500 rounded-full skill-bar" data-width="92%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">Looker</span><span class="text-stone-400">Advanced</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500/70 rounded-full skill-bar" data-width="85%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">Tailwind CSS</span><span
+                  class="text-slate-400">Expert</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500 rounded-full skill-bar" data-width="95%" style="width:0"></div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Analytics -->
-        <div class="reveal delay-200 bg-stone-800/50 border border-stone-700/40 rounded-2xl p-8 hover:border-accent-500/30 transition-all duration-300">
-          <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center mb-5">
-            <span class="iconify text-accent-500" data-icon="lucide:brain" data-width="24"></span>
-          </div>
-          <h3 class="text-stone-100 font-semibold text-lg mb-4">Analytics & ML</h3>
+        <div class="reveal delay-200 bg-stone-800/50 border border-stone-600/40 rounded-2xl p-8 glow-border">
+          <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center mb-5"><span
+              class="iconify text-accent-400" data-icon="lucide:wrench" data-width="24"></span></div>
+          <h3 class="text-slate-100 font-semibold text-lg mb-5">DevOps &amp; Tools</h3>
           <div class="space-y-4">
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">Statistical Modeling</span><span class="text-accent-400">Expert</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500 rounded-full skill-bar" data-width="94%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">Git</span><span
+                  class="text-accent-400">Advanced</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500/80 rounded-full skill-bar" data-width="85%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">Machine Learning</span><span class="text-accent-400">Advanced</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500/80 rounded-full skill-bar" data-width="86%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">cPanel / Plesk</span><span
+                  class="text-accent-400">Proficient</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500/70 rounded-full skill-bar" data-width="78%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">A/B Testing</span><span class="text-accent-400">Expert</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500 rounded-full skill-bar" data-width="95%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">Spatie RBAC</span><span
+                  class="text-accent-400">Expert</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500 rounded-full skill-bar" data-width="93%" style="width:0"></div>
+              </div>
             </div>
             <div>
-              <div class="flex justify-between text-sm mb-1.5"><span class="text-stone-300">ETL / Data Pipelines</span><span class="text-stone-400">Advanced</span></div>
-              <div class="h-1.5 bg-stone-700 rounded-full overflow-hidden"><div class="h-full bg-accent-500/70 rounded-full skill-bar" data-width="80%" style="width:0"></div></div>
+              <div class="flex justify-between text-sm mb-1.5"><span class="text-slate-300">PWA / Service
+                  Workers</span><span class="text-slate-400">Proficient</span></div>
+              <div class="h-1.5 bg-stone-600 rounded-full overflow-hidden">
+                <div class="h-full bg-accent-500/65 rounded-full skill-bar" data-width="72%" style="width:0"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Tool logos / tags -->
       <div class="reveal text-center">
-        <p class="text-stone-600 text-xs uppercase tracking-widest mb-6">Also proficient in</p>
+        <p class="text-slate-600 text-xs uppercase tracking-widest mb-5">Also proficient in</p>
         <div class="flex flex-wrap justify-center gap-3">
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">Pandas</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">NumPy</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">Scikit-learn</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">TensorFlow</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">BigQuery</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">Snowflake</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">dbt</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">Airflow</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">Excel / Sheets</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">Jupyter</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">Git</span>
-          <span class="px-4 py-2 bg-stone-800/60 border border-stone-700/40 rounded-lg text-stone-400 text-sm hover:border-stone-600 transition-colors">AWS</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">Laravel
+            Reverb</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">Inertia.js</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">DomPDF</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">Vite</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">QR
+            Code APIs</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">Bulk
+            SMS</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">Excel/PDF
+            Exports</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">JavaScript</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">KPI
+            Dashboards</span>
+          <span
+            class="px-4 py-2 bg-stone-800/60 border border-stone-600/40 rounded-lg text-slate-400 text-sm glow-border">CBE
+            / Telebirr</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- ══════════════════════════════════════════
+       PROJECTS — each card has a media slider
+       ══════════════════════════════════════════ -->
   <section id="projects" class="py-24 md:py-32 relative">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <span class="tag reveal">Featured Work</span>
-          <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5">
-            Selected Projects
-          </h2>
-          <p class="reveal delay-200 text-stone-500 mt-3 max-w-lg">
-            A curated selection of data analytics projects showcasing measurable business impact.
-          </p>
-        </div>
+      <div class="mb-16">
+        <span class="tag reveal">Featured Work</span>
+        <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5">Selected Projects
+        </h2>
+        <p class="reveal delay-200 text-slate-500 mt-3 max-w-lg">Production systems I've designed and shipped.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Project 1 -->
-        <div class="reveal project-card bg-stone-800/30 border border-stone-700/40 rounded-2xl overflow-hidden group">
-          <div class="aspect-[16/10] overflow-hidden relative">
-            <img src="https://picsum.photos/seed/churn-dashboard/800/500" alt="Customer Churn Prediction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="tag">Machine Learning</span>
-              <span class="tag">Python</span>
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- ─── PROJECT 1: Company Management System ─────────────────────
+             HOW TO ADD YOUR IMAGES:
+             Replace the src values inside data-slides below.
+             Format: {"type":"image","src":"YOUR_IMAGE_URL","label":"PHOTO"}
+             You can add as many slides as you want.
+        ─────────────────────────────────────────────────────────────── -->
+        <div
+          class="reveal project-card bg-stone-800/30 border border-stone-600/40 rounded-2xl overflow-hidden glow-border">
+          <div class="media-slider aspect-[16/9]" data-slides='[
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779454374/Screenshot_2026-05-22_155030_bnqrjq.png","label":"DASHBOARD"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779454374/Screenshot_2026-05-22_154230_fuoo0l.png","label":"ORDERS"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779465157/Screenshot_2026-05-22_185221_ap0ozf.png","label":"ANALYTICS"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779454752/Screenshot_2026-05-22_155131_metiiv.png","label":"ANALYTICS"}
+               ]'>
+            <div class="absolute top-3 left-3 flex gap-2 z-10">
+              <span class="tag">Laravel 12</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
             </div>
           </div>
           <div class="p-7">
-            <h3 class="text-stone-100 text-xl font-semibold mb-3">Customer Churn Prediction Engine</h3>
-            <p class="text-stone-400 text-sm leading-relaxed mb-5">Built a predictive model identifying at-risk customers 60 days before churn with 93% accuracy, enabling proactive retention that reduced churn by 28% and saved $3.2M annually.</p>
+            <h3 class="text-slate-100 text-xl font-semibold mb-3">Company Management System — Kaldi's Coffee</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">Enterprise multi-branch management platform deployed
+              in production. Includes pre-order management with CBE/Telebirr payment tracking, bulk SMS reminders, IT
+              ticketing, employee evaluations, inventory management, and HR workflows.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Pre-Order
+                Lifecycle</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">IT
+                Ticketing</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">KPI
+                Dashboards</span>
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">PWA</span>
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Permissions</span>
+            </div>
             <div class="flex items-center justify-between">
-              <div class="flex gap-6">
-                <div><span class="text-accent-400 font-bold text-lg">93%</span><span class="text-stone-600 text-xs ml-1">Accuracy</span></div>
-                <div><span class="text-accent-400 font-bold text-lg">$3.2M</span><span class="text-stone-600 text-xs ml-1">Saved/yr</span></div>
+              <div class="flex gap-5">
+                <div><span class="text-accent-400 font-bold text-lg">RBAC</span><span
+                    class="text-slate-600 text-xs ml-1">Auth</span></div>
+                <div><span class="text-accent-400 font-bold text-lg">8+</span><span
+                    class="text-slate-600 text-xs ml-1">Modules</span></div>
               </div>
-              <button class="text-stone-500 hover:text-accent-500 transition-colors" onclick="showToast('Case study coming soon — stay tuned!')">
-                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
-              </button>
+              <span class="tag">In Production</span>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="reveal delay-100 project-card bg-stone-800/30 border border-stone-700/40 rounded-2xl overflow-hidden group">
-          <div class="aspect-[16/10] overflow-hidden relative">
-            <img src="https://picsum.photos/seed/pricing-analytics/800/500" alt="Dynamic Pricing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="tag">Analytics</span>
-              <span class="tag">SQL</span>
+        <!-- ─── PROJECT 2: Digital Menu — IMAGES + VIDEO ─────────────────
+             This project supports video slides too!
+             For images: {"type":"image","src":"YOUR_URL","label":"PHOTO"}
+             For videos: {"type":"video","src":"YOUR_VIDEO_URL","label":"VIDEO","poster":"THUMBNAIL_URL"}
+             poster is optional but recommended for videos.
+        ─────────────────────────────────────────────────────────────── -->
+        <div
+          class="reveal delay-100 project-card bg-stone-800/30 border border-stone-600/40 rounded-2xl overflow-hidden glow-border">
+          <div class="media-slider aspect-[16/9]" data-slides='[
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779464522/Screenshot_2026-05-22_184140_cq9uq5.png","label":"MENU VIEW"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779464343/photo_2026-05-22_18-38-48_ibikzm.jpg","label":"QR SCAN"},
+                 {"type":"video","src":"https://res.cloudinary.com/dnvhwnwq1/video/upload/v1779464132/Screen_Recording_2026-05-22_161505_1_1_1_ar7qc1.mp4","label":"Play VIDEO","poster":"https://placehold.co/800x450/1c1917/f59e0b?text=▶+Play+Video"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779454374/photo_2026-05-22_15-46-09_hzskgq.jpg","label":"ANALYTICS"}
+               ]'>
+            <div class="absolute top-3 left-3 flex gap-2 z-10">
+              <span class="tag">Laravel</span>
+              <span class="tag">Inertia.js</span>
+              <span class="tag">QR Code</span>
             </div>
           </div>
           <div class="p-7">
-            <h3 class="text-stone-100 text-xl font-semibold mb-3">Dynamic Pricing Optimization</h3>
-            <p class="text-stone-400 text-sm leading-relaxed mb-5">Developed a price elasticity model across 50K+ SKUs that dynamically adjusted pricing, resulting in a 14% increase in margin and 8% uplift in conversion rate within the first quarter.</p>
+            <h3 class="text-slate-100 text-xl font-semibold mb-3">Kaldi's Digital Menu Platform</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">Comprehensive digital menu and inventory management
+              system for a multi-branch business. Features multi-language support (English &amp; Amharic), QR code
+              generation for mobile access, feedback analytics, and real-time inventory sync via external API.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Multi-Language</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">QR
+                Code</span>
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Analytics
+                Dashboard</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">API
+                Integration</span>
+            </div>
             <div class="flex items-center justify-between">
-              <div class="flex gap-6">
-                <div><span class="text-accent-400 font-bold text-lg">+14%</span><span class="text-stone-600 text-xs ml-1">Margin</span></div>
-                <div><span class="text-accent-400 font-bold text-lg">50K+</span><span class="text-stone-600 text-xs ml-1">SKUs</span></div>
+              <div class="flex gap-5">
+                <div><span class="text-accent-400 font-bold text-lg">Multi</span><span
+                    class="text-slate-600 text-xs ml-1">Branch</span></div>
+                <div><span class="text-accent-400 font-bold text-lg">EN+AM</span><span
+                    class="text-slate-600 text-xs ml-1">Languages</span></div>
               </div>
-              <button class="text-stone-500 hover:text-accent-500 transition-colors" onclick="showToast('Case study coming soon — stay tuned!')">
-                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
-              </button>
+              <span class="tag">In Production</span>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="reveal project-card bg-stone-800/30 border border-stone-700/40 rounded-2xl overflow-hidden group">
-          <div class="aspect-[16/10] overflow-hidden relative">
-            <img src="https://picsum.photos/seed/supply-chain-viz/800/500" alt="Supply Chain Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="tag">Tableau</span>
-              <span class="tag">ETL</span>
+        <!-- ─── PROJECT 3: DevMed ────────────────────────────────────────
+             Replace src URLs with your actual screenshots.
+        ─────────────────────────────────────────────────────────────── -->
+        <div
+          class="reveal project-card bg-stone-800/30 border border-stone-600/40 rounded-2xl overflow-hidden glow-border">
+          <div class="media-slider aspect-[16/9]" data-slides='[
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779467665/Screenshot_2026-05-22_192909_nryvg7.png","label":"STOREFRONT"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779467664/Screenshot_2026-05-22_192854_wxkr8k.png","label":"CHECKOUT"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779526593/photo_2026-05-23_11-55-41_wdmeme.jpg","label":"ADMIN"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779526592/photo_2026-05-23_11-55-32_i4rsdn.jpg","label":"ADMIN"},
+                 {"type":"image","src":"https://res.cloudinary.com/dnvhwnwq1/image/upload/v1779526593/photo_2026-05-23_11-55-38_msy0bs.jpg","label":"landing"}
+               ]'>
+            <div class="absolute top-3 left-3 flex gap-2 z-10">
+              <span class="tag">Laravel</span>
+              <span class="tag">React</span>
+              <span class="tag">E-Commerce</span>
             </div>
           </div>
           <div class="p-7">
-            <h3 class="text-stone-100 text-xl font-semibold mb-3">Supply Chain Intelligence Dashboard</h3>
-            <p class="text-stone-400 text-sm leading-relaxed mb-5">Designed an end-to-end supply chain monitoring system in Tableau, integrating 12 data sources to provide real-time visibility across 200+ warehouses, reducing stockouts by 35%.</p>
+            <h3 class="text-slate-100 text-xl font-semibold mb-3">DevMed — Medical Supplies E-Commerce</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">Full-stack medical supplies e-commerce platform with
+              customer storefront and admin dashboard. Features product catalog, persistent cart, multi-step checkout,
+              CBE/Telebirr payment verification, RBAC, and real-time notifications.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Shopping
+                Cart</span>
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Order
+                Tracking</span>
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Admin
+                Dashboard</span>
+              <span
+                class="text-xs px-3 py-1 rounded-full bg-stone-700/60 text-slate-400 border border-stone-600/40">Real-Time
+                Notifications</span>
+            </div>
             <div class="flex items-center justify-between">
-              <div class="flex gap-6">
-                <div><span class="text-accent-400 font-bold text-lg">-35%</span><span class="text-stone-600 text-xs ml-1">Stockouts</span></div>
-                <div><span class="text-accent-400 font-bold text-lg">200+</span><span class="text-stone-600 text-xs ml-1">Warehouses</span></div>
+              <div class="flex gap-5">
+                <div><span class="text-accent-400 font-bold text-lg">RBAC</span><span
+                    class="text-slate-600 text-xs ml-1">Auth</span></div>
+                <div><span class="text-accent-400 font-bold text-lg">Full</span><span
+                    class="text-slate-600 text-xs ml-1">Stack</span></div>
               </div>
-              <button class="text-stone-500 hover:text-accent-500 transition-colors" onclick="showToast('Case study coming soon — stay tuned!')">
-                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
-              </button>
+              <span class="tag">Completed</span>
             </div>
           </div>
         </div>
-
-        <!-- Project 4 -->
-        <div class="reveal delay-100 project-card bg-stone-800/30 border border-stone-700/40 rounded-2xl overflow-hidden group">
-          <div class="aspect-[16/10] overflow-hidden relative">
-            <img src="https://picsum.photos/seed/ab-testing-health/800/500" alt="A/B Testing Framework" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="tag">A/B Testing</span>
-              <span class="tag">R</span>
-            </div>
-          </div>
-          <div class="p-7">
-            <h3 class="text-stone-100 text-xl font-semibold mb-3">Healthcare A/B Testing Framework</h3>
-            <p class="text-stone-400 text-sm leading-relaxed mb-5">Architected a Bayesian A/B testing framework for a digital health platform, accelerating experiment conclusion times by 40% and increasing feature launch confidence from 75% to 97%.</p>
-            <div class="flex items-center justify-between">
-              <div class="flex gap-6">
-                <div><span class="text-accent-400 font-bold text-lg">40%</span><span class="text-stone-600 text-xs ml-1">Faster</span></div>
-                <div><span class="text-accent-400 font-bold text-lg">97%</span><span class="text-stone-600 text-xs ml-1">Confidence</span></div>
-              </div>
-              <button class="text-stone-500 hover:text-accent-500 transition-colors" onclick="showToast('Case study coming soon — stay tuned!')">
-                <span class="iconify" data-icon="lucide:external-link" data-width="18"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div><!-- /grid -->
     </div>
   </section>
 
-  <!-- Impact Metrics Section -->
-  <section class="py-20 relative overflow-hidden">
-    <div class="absolute inset-0 bg-accent-500/5"></div>
-    <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(245,158,11,0.05) 0%, transparent 50%, rgba(245,158,11,0.03) 100%)"></div>
-    <div class="max-w-7xl mx-auto px-6 relative">
-      <div class="text-center mb-14">
-        <span class="tag reveal">By The Numbers</span>
-        <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5">Measurable Impact</h2>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="reveal text-center">
-          <div class="stat-value text-4xl md:text-5xl font-bold font-serif" data-count="8">0</div>
-          <div class="text-stone-400 text-sm mt-2">Million $ Revenue<br>Influenced</div>
-        </div>
-        <div class="reveal delay-100 text-center">
-          <div class="stat-value text-4xl md:text-5xl font-bold font-serif" data-count="50">0</div>
-          <div class="text-stone-400 text-sm mt-2">Projects<br>Delivered</div>
-        </div>
-        <div class="reveal delay-200 text-center">
-          <div class="stat-value text-4xl md:text-5xl font-bold font-serif" data-count="15">0</div>
-          <div class="text-stone-400 text-sm mt-2">Dashboards<br>Deployed</div>
-        </div>
-        <div class="reveal delay-300 text-center">
-          <div class="stat-value text-4xl md:text-5xl font-bold font-serif" data-count="99">0</div>
-          <div class="text-stone-400 text-sm mt-2">% Client<br>Satisfaction</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="py-24 md:py-32 bg-stone-800/30 relative">
+  <!-- EXPERIENCE & EDUCATION -->
+  <section id="experience" class="py-24 md:py-32 relative" style="background:rgba(28,25,23,0.6)">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16">
         <div>
-          <span class="tag reveal">Career Path</span>
-          <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5 mb-8">
-            Professional<br>Experience
-          </h2>
-          <p class="reveal delay-200 text-stone-400 leading-relaxed mb-8">
-            My career trajectory has taken me from consulting to big tech to high-growth startups, giving me a versatile perspective on how data drives decisions at every scale.
-          </p>
-
-          <!-- Timeline -->
+          <span class="tag reveal">Career</span>
+          <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5 mb-8">Work
+            Experience</h2>
           <div class="relative pl-8">
             <div class="absolute left-[7px] top-2 bottom-2 w-0.5 timeline-line"></div>
-
-            <!-- Role 1 -->
             <div class="reveal relative mb-10">
-              <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full border-2 border-accent-500 bg-stone-900"></div>
-              <div class="flex items-start justify-between mb-2">
+              <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full border-2 border-accent-500 bg-stone-900"
+                style="box-shadow:0 0 0 4px rgba(245,158,11,0.15)"></div>
+              <div class="flex items-start justify-between mb-2 gap-4">
                 <div>
-                  <h4 class="text-stone-100 font-semibold">Senior Data Analyst</h4>
-                  <div class="text-accent-500 text-sm font-medium">Stripe</div>
+                  <h4 class="text-slate-100 font-semibold">Web Developer / Data Analyst</h4>
+                  <div class="text-accent-400 text-sm font-medium">Kaldi's Coffee</div>
                 </div>
-                <span class="text-stone-600 text-xs mt-1">2022 — Present</span>
+                <span class="text-slate-600 text-xs mt-1 flex-shrink-0">Jun 2025 — Present</span>
               </div>
-              <p class="text-stone-500 text-sm leading-relaxed">Lead analytics for the Payments Infrastructure team. Built real-time fraud detection models and executive dashboards used by C-suite. Reduced false positive rate by 42%.</p>
-            </div>
-
-            <!-- Role 2 -->
-            <div class="reveal delay-100 relative mb-10">
-              <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full border-2 border-stone-500 bg-stone-900"></div>
-              <div class="flex items-start justify-between mb-2">
-                <div>
-                  <h4 class="text-stone-100 font-semibold">Data Analyst</h4>
-                  <div class="text-accent-500 text-sm font-medium">Google</div>
-                </div>
-                <span class="text-stone-600 text-xs mt-1">2020 — 2022</span>
-              </div>
-              <p class="text-stone-500 text-sm leading-relaxed">Analyzed user behavior across Google Cloud Platform products. Designed A/B testing frameworks and delivered insights that improved onboarding conversion by 23%.</p>
-            </div>
-
-            <!-- Role 3 -->
-            <div class="reveal delay-200 relative mb-10">
-              <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full border-2 border-stone-500 bg-stone-900"></div>
-              <div class="flex items-start justify-between mb-2">
-                <div>
-                  <h4 class="text-stone-100 font-semibold">Junior Analyst</h4>
-                  <div class="text-accent-500 text-sm font-medium">McKinsey & Company</div>
-                </div>
-                <span class="text-stone-600 text-xs mt-1">2018 — 2020</span>
-              </div>
-              <p class="text-stone-500 text-sm leading-relaxed">Supported C-suite advisory engagements with data-driven insights across healthcare, retail, and energy sectors. Built financial models informing $500M+ in M&A decisions.</p>
+              <p class="text-slate-500 text-sm leading-relaxed">Building enterprise-grade web applications, KPI
+                dashboards, and business intelligence tools. Developed the Company Management System, Digital Menu
+                Platform, and internal reporting tools deployed in production.</p>
             </div>
           </div>
         </div>
-
-        <!-- Education & Certifications -->
         <div>
           <span class="tag reveal">Education</span>
-          <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5 mb-8">
-            Education &<br>Certifications
-          </h2>
-
-          <div class="space-y-6">
-            <div class="reveal bg-stone-800/50 border border-stone-700/40 rounded-2xl p-7 hover:border-accent-500/20 transition-all duration-300">
+          <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5 mb-8">Education
+            &amp;<br>Certifications</h2>
+          <div class="space-y-5">
+            <div class="reveal bg-stone-800/50 border border-stone-600/40 rounded-2xl p-7 glow-border">
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0">
-                  <span class="iconify text-accent-500" data-icon="lucide:graduation-cap" data-width="22"></span>
-                </div>
+                <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0"><span
+                    class="iconify text-accent-400" data-icon="lucide:graduation-cap" data-width="22"></span></div>
                 <div>
-                  <h4 class="text-stone-100 font-semibold">M.S. Statistics</h4>
-                  <div class="text-accent-500 text-sm">Stanford University</div>
-                  <p class="text-stone-500 text-sm mt-2">Focus on Bayesian inference and computational statistics. Thesis on hierarchical models for A/B testing.</p>
+                  <h4 class="text-slate-100 font-semibold">Bachelor of Science — Computer Science</h4>
+                  <div class="text-accent-400 text-sm">CPU College, Addis Ababa</div>
+                  <p class="text-slate-500 text-sm mt-2">June 2021 — February 2025</p>
                 </div>
-                <span class="text-stone-600 text-xs flex-shrink-0">2016 — 2018</span>
               </div>
             </div>
-
-            <div class="reveal delay-100 bg-stone-800/50 border border-stone-700/40 rounded-2xl p-7 hover:border-accent-500/20 transition-all duration-300">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0">
-                  <span class="iconify text-accent-500" data-icon="lucide:graduation-cap" data-width="22"></span>
-                </div>
-                <div>
-                  <h4 class="text-stone-100 font-semibold">B.S. Mathematics & Economics</h4>
-                  <div class="text-accent-500 text-sm">UC Berkeley</div>
-                  <p class="text-stone-500 text-sm mt-2">Summa Cum Laude. Dean's List all semesters.</p>
-                </div>
-                <span class="text-stone-600 text-xs flex-shrink-0">2012 — 2016</span>
-              </div>
-            </div>
-
-            <div class="reveal delay-200">
-              <p class="text-stone-600 text-xs uppercase tracking-widest mb-4 mt-8">Certifications</p>
+            <div class="reveal delay-100">
+              <p class="text-slate-600 text-xs uppercase tracking-widest mb-4 mt-8">Proficiencies &amp; Specialisations
+              </p>
               <div class="space-y-3">
-                <div class="flex items-center gap-3 bg-stone-800/30 border border-stone-700/30 rounded-xl px-5 py-4">
-                  <span class="iconify text-accent-500" data-icon="lucide:award" data-width="18"></span>
+                <div class="flex items-center gap-3 bg-stone-800/30 border border-stone-600/30 rounded-xl px-5 py-4">
+                  <span class="iconify text-accent-400" data-icon="lucide:award" data-width="17"></span>
                   <div>
-                    <div class="text-stone-200 text-sm font-medium">Google Professional Data Analyst</div>
-                    <div class="text-stone-600 text-xs">Google — 2021</div>
+                    <div class="text-slate-200 text-sm font-medium">Full-Stack Laravel + React Development</div>
+                    <div class="text-slate-600 text-xs">Enterprise Web Applications</div>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 bg-stone-800/30 border border-stone-700/30 rounded-xl px-5 py-4">
-                  <span class="iconify text-accent-500" data-icon="lucide:award" data-width="18"></span>
+                <div class="flex items-center gap-3 bg-stone-800/30 border border-stone-600/30 rounded-xl px-5 py-4">
+                  <span class="iconify text-accent-400" data-icon="lucide:award" data-width="17"></span>
                   <div>
-                    <div class="text-stone-200 text-sm font-medium">AWS Certified Data Analytics</div>
-                    <div class="text-stone-600 text-xs">Amazon — 2022</div>
+                    <div class="text-slate-200 text-sm font-medium">Role-Based Access Control (RBAC)</div>
+                    <div class="text-slate-600 text-xs">Spatie Laravel Permission</div>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 bg-stone-800/30 border border-stone-700/30 rounded-xl px-5 py-4">
-                  <span class="iconify text-accent-500" data-icon="lucide:award" data-width="18"></span>
+                <div class="flex items-center gap-3 bg-stone-800/30 border border-stone-600/30 rounded-xl px-5 py-4">
+                  <span class="iconify text-accent-400" data-icon="lucide:award" data-width="17"></span>
                   <div>
-                    <div class="text-stone-200 text-sm font-medium">Tableau Desktop Specialist</div>
-                    <div class="text-stone-600 text-xs">Tableau — 2020</div>
+                    <div class="text-slate-200 text-sm font-medium">KPI Dashboards &amp; Data Analysis</div>
+                    <div class="text-slate-600 text-xs">Business Intelligence &amp; Reporting</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 bg-stone-800/30 border border-stone-600/30 rounded-xl px-5 py-4">
+                  <span class="iconify text-accent-400" data-icon="lucide:award" data-width="17"></span>
+                  <div>
+                    <div class="text-slate-200 text-sm font-medium">Progressive Web Apps (PWA)</div>
+                    <div class="text-slate-600 text-xs">Offline Support via Service Workers</div>
                   </div>
                 </div>
               </div>
@@ -796,300 +1129,398 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="py-24 md:py-32 relative">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="tag reveal">Testimonials</span>
-        <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5">
-          What Colleagues Say
-        </h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="reveal bg-stone-800/30 border border-stone-700/40 rounded-2xl p-8 relative">
-          <span class="iconify text-accent-500/20 absolute top-6 right-6" data-icon="lucide:quote" data-width="32"></span>
-          <div class="flex items-center gap-1 mb-5">
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-          </div>
-          <p class="text-stone-400 text-sm leading-relaxed mb-6">"Alex's ability to translate complex datasets into actionable strategies is unmatched. The churn prediction model alone paid for their salary ten times over. A truly exceptional analyst."</p>
-          <div class="flex items-center gap-3">
-            <img src="https://picsum.photos/seed/sarah-cto/48/48" alt="" class="w-10 h-10 rounded-full object-cover">
-            <div>
-              <div class="text-stone-200 text-sm font-medium">Sarah Chen</div>
-              <div class="text-stone-600 text-xs">VP of Engineering, Stripe</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal delay-100 bg-stone-800/30 border border-stone-700/40 rounded-2xl p-8 relative">
-          <span class="iconify text-accent-500/20 absolute top-6 right-6" data-icon="lucide:quote" data-width="32"></span>
-          <div class="flex items-center gap-1 mb-5">
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-          </div>
-          <p class="text-stone-400 text-sm leading-relaxed mb-6">"Working with Alex was transformative for our data culture. They didn't just deliver dashboards—they taught our team how to think about data strategically. The ROI was incredible."</p>
-          <div class="flex items-center gap-3">
-            <img src="https://picsum.photos/seed/mark-dir/48/48" alt="" class="w-10 h-10 rounded-full object-cover">
-            <div>
-              <div class="text-stone-200 text-sm font-medium">Mark Rodriguez</div>
-              <div class="text-stone-600 text-xs">Director of Analytics, Google</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal delay-200 bg-stone-800/30 border border-stone-700/40 rounded-2xl p-8 relative">
-          <span class="iconify text-accent-500/20 absolute top-6 right-6" data-icon="lucide:quote" data-width="32"></span>
-          <div class="flex items-center gap-1 mb-5">
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-            <span class="iconify text-accent-500" data-icon="lucide:star" data-width="14"></span>
-          </div>
-          <p class="text-stone-400 text-sm leading-relaxed mb-6">"Alex brought a rare combination of technical depth and business acumen. Their pricing model directly contributed to our best quarter ever. I'd hire them again in a heartbeat."</p>
-          <div class="flex items-center gap-3">
-            <img src="https://picsum.photos/seed/lisa-ceo/48/48" alt="" class="w-10 h-10 rounded-full object-cover">
-            <div>
-              <div class="text-stone-200 text-sm font-medium">Lisa Park</div>
-              <div class="text-stone-600 text-xs">CEO, RetailFlow</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-24 md:py-32 bg-stone-800/30 relative">
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 md:py-32 relative">
     <div class="absolute inset-0 dot-grid opacity-20"></div>
     <div class="max-w-7xl mx-auto px-6 relative">
       <div class="grid lg:grid-cols-2 gap-16">
         <div>
           <span class="tag reveal">Get In Touch</span>
-          <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5 mb-6">
-            Let's discuss your<br><span class="text-accent-500">data challenges</span>
-          </h2>
-          <p class="reveal delay-200 text-stone-400 text-lg leading-relaxed mb-10">
-            Whether you need a full-time analyst, a data strategy consultant, or help with a specific project—I'd love to hear about your challenges and explore how I can help.
-          </p>
-
+          <h2 class="reveal delay-100 font-serif text-3xl md:text-4xl font-bold tracking-tight mt-5 mb-6">Let's build
+            something<br><span class="text-accent-400">great together</span></h2>
+          <p class="reveal delay-200 text-slate-400 text-lg leading-relaxed mb-10">Whether you need a full-stack web
+            app, a KPI dashboard, or help with a Laravel/React project — I'd love to hear about it.</p>
           <div class="reveal delay-300 space-y-6">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0">
-                <span class="iconify text-accent-500" data-icon="lucide:mail" data-width="20"></span>
-              </div>
+              <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0"><span
+                  class="iconify text-accent-400" data-icon="lucide:mail" data-width="20"></span></div>
               <div>
-                <div class="text-stone-500 text-xs uppercase tracking-wider">Email</div>
-                <a href="mailto:alex@alexmorgan.dev" class="text-stone-200 hover:text-accent-500 transition-colors">alex@alexmorgan.dev</a>
+                <div class="text-slate-500 text-xs uppercase tracking-wider">Email</div><a
+                  href="mailto:eyuelalemnew123@gmail.com"
+                  class="text-slate-200 hover:text-accent-400 transition-colors">eyuelalemnew123@gmail.com</a>
               </div>
             </div>
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0">
-                <span class="iconify text-accent-500" data-icon="lucide:linkedin" data-width="20"></span>
-              </div>
+              <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0"><span
+                  class="iconify text-accent-400" data-icon="lucide:phone" data-width="20"></span></div>
               <div>
-                <div class="text-stone-500 text-xs uppercase tracking-wider">LinkedIn</div>
-                <a href="#" class="text-stone-200 hover:text-accent-500 transition-colors">linkedin.com/in/alexmorgan</a>
+                <div class="text-slate-500 text-xs uppercase tracking-wider">Phone</div><a href="tel:+251973334671"
+                  class="text-slate-200 hover:text-accent-400 transition-colors">+251 973 334 671</a>
               </div>
             </div>
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0">
-                <span class="iconify text-accent-500" data-icon="lucide:github" data-width="20"></span>
-              </div>
+              <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0"><span
+                  class="iconify text-accent-400" data-icon="lucide:linkedin" data-width="20"></span></div>
               <div>
-                <div class="text-stone-500 text-xs uppercase tracking-wider">GitHub</div>
-                <a href="#" class="text-stone-200 hover:text-accent-500 transition-colors">github.com/alexmorgan-data</a>
+                <div class="text-slate-500 text-xs uppercase tracking-wider">LinkedIn</div><a
+                  href="https://linkedin.com/in/eyuel-alemnew" target="_blank"
+                  class="text-slate-200 hover:text-accent-400 transition-colors">linkedin.com/in/eyuel-alemnew</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0"><span
+                  class="iconify text-accent-400" data-icon="lucide:map-pin" data-width="20"></span></div>
+              <div>
+                <div class="text-slate-500 text-xs uppercase tracking-wider">Location</div><span
+                  class="text-slate-200">Addis Ababa, Ethiopia</span>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Contact Form -->
         <div class="reveal delay-200">
-          <form id="contactForm" class="bg-stone-800/50 border border-stone-700/40 rounded-2xl p-8 space-y-6">
+          <form id="contactForm" class="bg-stone-800/50 border border-stone-600/40 rounded-2xl p-8 space-y-6">
             <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label class="text-stone-400 text-xs uppercase tracking-wider font-medium block mb-2">Name</label>
-                <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 bg-stone-700/30 border border-stone-600/40 rounded-xl text-stone-200 placeholder-stone-600 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all">
+              <div><label
+                  class="text-slate-400 text-xs uppercase tracking-wider font-medium block mb-2">Name</label><input
+                  type="text" required placeholder="Your name"
+                  class="w-full px-4 py-3 bg-stone-700/40 border border-stone-600/50 rounded-xl text-slate-200 placeholder-slate-600 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all">
               </div>
-              <div>
-                <label class="text-stone-400 text-xs uppercase tracking-wider font-medium block mb-2">Email</label>
-                <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 bg-stone-700/30 border border-stone-600/40 rounded-xl text-stone-200 placeholder-stone-600 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all">
+              <div><label
+                  class="text-slate-400 text-xs uppercase tracking-wider font-medium block mb-2">Email</label><input
+                  type="email" required placeholder="your@email.com"
+                  class="w-full px-4 py-3 bg-stone-700/40 border border-stone-600/50 rounded-xl text-slate-200 placeholder-slate-600 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all">
               </div>
             </div>
-            <div>
-              <label class="text-stone-400 text-xs uppercase tracking-wider font-medium block mb-2">Project Type</label>
-              <select class="w-full px-4 py-3 bg-stone-700/30 border border-stone-600/40 rounded-xl text-stone-400 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all appearance-none">
+            <div><label class="text-slate-400 text-xs uppercase tracking-wider font-medium block mb-2">Project
+                Type</label><select
+                class="w-full px-4 py-3 bg-stone-700/40 border border-stone-600/50 rounded-xl text-slate-400 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all appearance-none">
                 <option value="">Select a project type</option>
-                <option>Full-time Role</option>
-                <option>Consulting Engagement</option>
-                <option>Dashboard Development</option>
-                <option>Data Strategy</option>
+                <option>Full-Stack Web Application</option>
+                <option>Dashboard / BI Tool</option>
+                <option>E-Commerce Platform</option>
+                <option>API Development</option>
+                <option>Consulting</option>
                 <option>Other</option>
-              </select>
+              </select></div>
+            <div><label
+                class="text-slate-400 text-xs uppercase tracking-wider font-medium block mb-2">Message</label><textarea
+                required rows="4" placeholder="Tell me about your project..."
+                class="w-full px-4 py-3 bg-stone-700/40 border border-stone-600/50 rounded-xl text-slate-200 placeholder-slate-600 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all resize-none"></textarea>
             </div>
-            <div>
-              <label class="text-stone-400 text-xs uppercase tracking-wider font-medium block mb-2">Message</label>
-              <textarea required rows="4" placeholder="Tell me about your data challenges..." class="w-full px-4 py-3 bg-stone-700/30 border border-stone-600/40 rounded-xl text-stone-200 placeholder-stone-600 text-sm focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/20 transition-all resize-none"></textarea>
-            </div>
-            <button type="submit" class="w-full py-4 bg-accent-500 text-stone-900 font-semibold rounded-xl hover:bg-accent-400 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2" style="box-shadow:0 10px 30px rgba(245,158,11,0.15)">
-              Send Message
-              <span class="iconify" data-icon="lucide:send" data-width="16"></span>
-            </button>
+            <button type="submit"
+              class="w-full py-4 bg-accent-500 text-stone-900 font-semibold rounded-xl hover:bg-accent-400 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
+              style="box-shadow:0 10px 30px rgba(245,158,11,0.15)">Send Message <span class="iconify"
+                data-icon="lucide:send" data-width="16"></span></button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-12 border-t border-stone-800">
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-stone-700/50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-accent-500 flex items-center justify-center font-serif font-bold text-stone-900 text-sm">A</div>
-          <span class="text-stone-400 text-sm">© 2025 Alex Morgan. All rights reserved.</span>
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center font-serif font-bold text-white text-sm">
+            E</div>
+          <span class="text-slate-500 text-sm">© 2025 Eyuel Alemnew. All rights reserved.</span>
         </div>
         <div class="flex items-center gap-6">
-          <a href="#" class="text-stone-500 hover:text-accent-500 transition-colors">
-            <span class="iconify" data-icon="lucide:linkedin" data-width="18"></span>
-          </a>
-          <a href="#" class="text-stone-500 hover:text-accent-500 transition-colors">
-            <span class="iconify" data-icon="lucide:github" data-width="18"></span>
-          </a>
-          <a href="#" class="text-stone-500 hover:text-accent-500 transition-colors">
-            <span class="iconify" data-icon="lucide:twitter" data-width="18"></span>
-          </a>
-          <a href="mailto:alex@alexmorgan.dev" class="text-stone-500 hover:text-accent-500 transition-colors">
-            <span class="iconify" data-icon="lucide:mail" data-width="18"></span>
-          </a>
+          <a href="https://linkedin.com/in/eyuel-alemnew" target="_blank"
+            class="text-slate-500 hover:text-accent-400 transition-colors"><span class="iconify"
+              data-icon="lucide:linkedin" data-width="18"></span></a>
+          <a href="mailto:eyuelalemnew123@gmail.com"
+            class="text-slate-500 hover:text-accent-400 transition-colors"><span class="iconify" data-icon="lucide:mail"
+              data-width="18"></span></a>
+          <a href="tel:+251973334671" class="text-slate-500 hover:text-accent-400 transition-colors"><span
+              class="iconify" data-icon="lucide:phone" data-width="18"></span></a>
         </div>
-        <a href="#hero" class="text-stone-600 hover:text-stone-400 text-xs uppercase tracking-wider transition-colors flex items-center gap-1">
-          Back to top
-          <span class="iconify" data-icon="lucide:arrow-up" data-width="12"></span>
-        </a>
+        <a href="#hero"
+          class="text-slate-600 hover:text-slate-400 text-xs uppercase tracking-wider transition-colors flex items-center gap-1">Back
+          to top <span class="iconify" data-icon="lucide:arrow-up" data-width="12"></span></a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
+    /* ── MOBILE MENU ── */
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('open');
     });
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    document.querySelectorAll('#mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
     });
 
-    // Scroll Reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
+    /* ── SCROLL REVEAL ── */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    reveals.forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-    // Skill Bars
-    const skillBars = document.querySelectorAll('.skill-bar');
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const targetWidth = entry.target.dataset.width;
-          setTimeout(() => {
-            entry.target.style.width = targetWidth;
-            entry.target.style.transition = 'width 1.2s cubic-bezier(0.4,0,0.2,1)';
-          }, 200);
+    /* ── SKILL BARS ── */
+    const barObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const w = e.target.dataset.width;
+          setTimeout(() => { e.target.style.width = w; }, 200);
         }
       });
     }, { threshold: 0.5 });
-    skillBars.forEach(bar => skillObserver.observe(bar));
+    document.querySelectorAll('.skill-bar').forEach(b => barObs.observe(b));
 
-    // Stat Counter Animation
-    const statValues = document.querySelectorAll('[data-count]');
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = parseInt(entry.target.dataset.count);
-          let current = 0;
-          const increment = target / 60;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            entry.target.textContent = Math.floor(current) + (entry.target.dataset.count === '99' ? '%' : '+');
-          }, 25);
-          statObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    statValues.forEach(el => statObserver.observe(el));
-
-    // Navbar background on scroll
+    /* ── NAVBAR SCROLL ── */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(28,25,23,0.95)';
-        navbar.style.borderBottomColor = 'rgba(68,64,60,0.5)';
-      } else {
-        navbar.style.background = 'rgba(28,25,23,0.85)';
-        navbar.style.borderBottomColor = 'rgba(68,64,60,0.3)';
-      }
+      navbar.style.background = window.scrollY > 50 ? 'rgba(28,25,23,0.95)' : 'rgba(28,25,23,0.85)';
     });
 
-    // Contact Form
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    /* ── CONTACT FORM ── */
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      showToast('Message sent successfully! I\'ll get back to you within 24 hours.');
+      showToast("Message sent! I'll get back to you soon.");
       this.reset();
     });
 
-    // Toast notification
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      toast.innerHTML = `<div class="flex items-center gap-3"><span class="iconify text-accent-500" data-icon="lucide:check-circle" data-width="18"></span>${message}</div>`;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 4000);
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerHTML = `<div style="display:flex;align-items:center;gap:10px"><span class="iconify" data-icon="lucide:check-circle" data-width="17" style="color:#f59e0b"></span>${msg}</div>`;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4000);
     }
 
-    // Custom cursor
-    const cursorDot = document.getElementById('cursorDot');
-    if (cursorDot) {
-      document.addEventListener('mousemove', (e) => {
-        cursorDot.style.left = e.clientX - 4 + 'px';
-        cursorDot.style.top = e.clientY - 4 + 'px';
+    /* ── CUSTOM CURSOR ── */
+    const dot = document.getElementById('cursorDot');
+    if (dot) {
+      document.addEventListener('mousemove', e => {
+        dot.style.left = e.clientX - 4 + 'px';
+        dot.style.top = e.clientY - 4 + 'px';
       });
-      // Enlarge on hover over interactive elements
-      document.querySelectorAll('a, button, input, textarea, select').forEach(el => {
-        el.addEventListener('mouseenter', () => cursorDot.style.transform = 'scale(2.5)');
-        el.addEventListener('mouseleave', () => cursorDot.style.transform = 'scale(1)');
+      document.querySelectorAll('a,button,input,textarea,select').forEach(el => {
+        el.addEventListener('mouseenter', () => dot.style.transform = 'scale(2.5)');
+        el.addEventListener('mouseleave', () => dot.style.transform = 'scale(1)');
       });
     }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+    /* ── SMOOTH SCROLL ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    /* ════════════════════════════════════════════
+       MEDIA SLIDER — builds each slider from the
+       data-slides JSON on the .media-slider element
+       ════════════════════════════════════════════ */
+    function buildSliders() {
+      document.querySelectorAll('.media-slider').forEach(container => {
+        const rawSlides = JSON.parse(container.dataset.slides || '[]');
+        if (!rawSlides.length) return;
+
+        // Preserve any absolute-positioned children (tags overlay etc.)
+        const overlayChildren = Array.from(container.children);
+
+        /* ── build track ── */
+        const track = document.createElement('div');
+        track.className = 'media-track';
+        track.style.height = '100%';
+
+        rawSlides.forEach((slide, i) => {
+          const slideEl = document.createElement('div');
+          slideEl.className = 'media-slide';
+          slideEl.style.height = '100%';
+
+          if (slide.type === 'video') {
+            /* video slide */
+            const video = document.createElement('video');
+            video.src = slide.src;
+            video.controls = true;
+            video.muted = true;       // muted required for browser autoplay
+            video.preload = 'metadata';
+            video.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block';
+            if (slide.poster) video.poster = slide.poster;
+            slideEl.appendChild(video);
+          } else {
+            /* image slide */
+            const img = document.createElement('img');
+            img.src = slide.src;
+            img.alt = slide.label || `Slide ${i + 1}`;
+            img.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block;background:#0d0d0c;cursor:zoom-in';
+            img.loading = 'lazy';
+            img.addEventListener('click', () => openLightbox(slide.src, slide.label || `Slide ${i + 1}`));
+            slideEl.appendChild(img);
+          }
+
+          track.appendChild(slideEl);
+        });
+
+        container.appendChild(track);
+
+        const counter = document.createElement('div');
+        counter.className = 'slide-counter';
+        counter.textContent = `1 / ${rawSlides.length}`;
+        container.appendChild(counter);
+
+        const typeBadge = document.createElement('div');
+        typeBadge.className = 'media-type-badge';
+        container.appendChild(typeBadge);
+
+        const dotsWrap = document.createElement('div');
+        dotsWrap.className = 'slider-dots';
+        rawSlides.forEach((_, i) => {
+          const d = document.createElement('button');
+          d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+          d.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          dotsWrap.appendChild(d);
+        });
+        container.appendChild(dotsWrap);
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'slider-btn prev';
+        prevBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>';
+        prevBtn.setAttribute('aria-label', 'Previous slide');
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'slider-btn next';
+        nextBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>';
+        nextBtn.setAttribute('aria-label', 'Next slide');
+
+        container.appendChild(prevBtn);
+        container.appendChild(nextBtn);
+
+        /* ── state & auto-slide ── */
+        let current = 0;
+        let autoTimer = null;
+
+        function startAuto() {
+          stopAuto();
+          // Don't schedule if current slide is a video that is still playing
+          const curVideo = track.children[current].querySelector('video');
+          if (curVideo && !curVideo.paused && !curVideo.ended) return;
+          autoTimer = setTimeout(() => {
+            updateSlider((current + 1) % rawSlides.length);
+            startAuto();
+          }, 4000);
+        }
+
+        function stopAuto() {
+          if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
+        }
+
+        // Pause auto-slide on hover, resume on leave
+        container.addEventListener('mouseenter', stopAuto);
+        container.addEventListener('mouseleave', startAuto);
+
+        function updateSlider(newIndex) {
+          // pause old video
+          const currentVideo = track.children[current].querySelector('video');
+          if (currentVideo) currentVideo.pause();
+
+          current = newIndex;
+          track.style.transform = `translateX(-${current * 100}%)`;
+
+          // counter
+          counter.textContent = `${current + 1} / ${rawSlides.length}`;
+
+          // type badge
+          const slide = rawSlides[current];
+          typeBadge.innerHTML = slide.type === 'video'
+            ? '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> VIDEO'
+            : '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> PHOTO';
+
+          // dots
+          dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+          });
+
+          // arrows — loop so always enabled
+          prevBtn.disabled = false;
+          nextBtn.disabled = false;
+
+          // autoplay video slides (muted for browser policy)
+          const newVideo = track.children[current].querySelector('video');
+          if (newVideo) {
+            newVideo.currentTime = 0;
+            newVideo.muted = true;
+            newVideo.play().catch(() => { });
+            // advance to next slide when video ends
+            newVideo.onended = () => {
+              updateSlider((current + 1) % rawSlides.length);
+              startAuto();
+            };
+          }
+        }
+
+        prevBtn.addEventListener('click', () => {
+          stopAuto();
+          updateSlider((current - 1 + rawSlides.length) % rawSlides.length);
+          startAuto();
+        });
+        nextBtn.addEventListener('click', () => {
+          stopAuto();
+          updateSlider((current + 1) % rawSlides.length);
+          startAuto();
+        });
+        dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) => {
+          d.addEventListener('click', () => { stopAuto(); updateSlider(i); startAuto(); });
+        });
+
+        /* ── swipe support ── */
+        let touchStartX = 0;
+        container.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        container.addEventListener('touchend', e => {
+          const dx = e.changedTouches[0].clientX - touchStartX;
+          if (Math.abs(dx) > 40) {
+            stopAuto();
+            if (dx < 0) updateSlider((current + 1) % rawSlides.length);
+            if (dx > 0) updateSlider((current - 1 + rawSlides.length) % rawSlides.length);
+            startAuto();
+          }
+        }, { passive: true });
+
+        /* ── keyboard support when focused ── */
+        container.setAttribute('tabindex', '0');
+        container.addEventListener('keydown', e => {
+          if (e.key === 'ArrowLeft') { stopAuto(); updateSlider((current - 1 + rawSlides.length) % rawSlides.length); startAuto(); }
+          if (e.key === 'ArrowRight') { stopAuto(); updateSlider((current + 1) % rawSlides.length); startAuto(); }
+        });
+
+        // initialise + start auto-slide
+        updateSlider(0);
+        startAuto();
+      });
+    }
+
+    /* ── LIGHTBOX ── */
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.style.cssText = 'display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;cursor:zoom-out';
+    lightbox.innerHTML = `
+      <button id="lb-close" style="position:absolute;top:20px;right:24px;background:rgba(40,35,30,0.85);border:1px solid rgba(245,158,11,0.35);color:#f59e0b;border-radius:50%;width:44px;height:44px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:9001;transition:background .2s">&#x2715;</button>
+      <img id="lb-img" src="" alt="" style="max-width:95vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,0.6);user-select:none" />
+      <div id="lb-label" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#a8a29e;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:rgba(28,25,23,0.8);padding:5px 14px;border-radius:6px"></div>
+    `;
+    document.body.appendChild(lightbox);
+
+    function openLightbox(src, label) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lb-label').textContent = label;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target.id === 'lb-close') closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    buildSliders();
   </script>
 </body>
+
 </html>
